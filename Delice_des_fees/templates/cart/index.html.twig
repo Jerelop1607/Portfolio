@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre panier{% endblock %}
+
+{% block body %}
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+
+    {% if cart|length > 0 %}
+
+    <h1>Hello {{app.user.firstname}}! Voici votre panier</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Produits</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Quantité</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% set total = null %}
+   {% for product in cart %}
+    <tr>
+    <th>
+    <img src="/upload/{{ product.product.illustration}}" alt ="{{ product.product.name }}" height="75px">
+    </th>
+      <td>{{product.product.name}}</td>
+      <td>
+            <a href="{{path('decrease_to_cart', {'id' : product.product.id}) }}">
+       <img src="{{ asset ('img/moins.png')}}" height ="18x" alt="Enlever un produit">
+            </a>
+
+
+                    {{product.quantity}}
+
+
+        <a href="{{path('add_to_cart', {'id' : product.product.id}) }}">
+       <img src="{{ asset ('img/plus.png')}}" height ="18x" alt="Ajouter">
+       </a>
+
+      </td>
+      <td>{{(product.product.prix)|number_format(2, ',','.')}} €</td>
+      <td>
+      {{ ((product.product.prix) * product.quantity)|number_format(2, ',','.') }} €</td>
+        <td>
+            <a href="{{path('delete_to_cart', {'id' : product.product.id}) }}">
+                <img src="{{ asset ('img/delete.png')}}" height ="18x" alt="Supprimer">
+            </a>
+        </td>
+    </tr>
+    {% set total = total + (product.product.prix * product.quantity) %}
+{% endfor %}
+  </tbody>
+</table>
+
+<div class="text-right mb-5">
+
+<b> Nombre de produits : </b> {{cart|length}} <br>
+<b> Total de mon panier : </b> {{ (total)|number_format(2, ',','.') }} € <br>
+
+<a href="{{path('order')}}" class="btn btn-primary btn-block mt-3"> Valider mon panier </a>
+</div>
+
+</div>
+{% else %}
+<hr>
+<p><b>Votre panier est vide</b></p>
+
+{% endif %}
+{% endblock %}

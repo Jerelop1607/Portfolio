@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+{% block title %} {{ title }} {% endblock %}
+{% block body %}
+<br>
+<h1><div class="message">{{message}}</div> </h1><br>
+<br><br>
+<br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br>
+
+<div class="row">
+
+
+        {% for bonbon in bonbons %}
+
+        <div class="card-boissons col-3 mt-3">
+
+
+        <div class="flip-card-back">
+
+                 {{bonbon.description}} <br><br> <hr>
+
+
+
+
+        </div>
+        <div class="image_container" >
+             <img class="card-img-top" src="/upload/{{bonbon.Illustration}}"/>
+        </div>
+
+        <div class="text_back">
+        <br><br>
+            <div>
+                Peut contenir des traces de <br>
+                     {{bonbon.allergenes}} <br><br><hr>
+
+                    <h4>{{bonbon.name}}</h4>
+                        <h5>{{bonbon.prix|number_format(2,',')}} € </h5>
+            </div>
+
+            {% if app.user %}
+
+
+
+                <a href="{{path('add_to_cart', {'id':bonbon.id })}}" class="btn btn-primary"> Ajouter au panier </a>
+
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+        {% endfor %}
+
+</div>
+
+{% endblock %}
+

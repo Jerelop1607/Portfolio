@@ -1,0 +1,226 @@
+
+body {
+    background-image: url("bourboulie.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 56.25vw;
+    margin:auto;
+    background-attachment: fixed;
+    min-height:50vw;
+}
+
+.message{
+    text-align: center;
+    color: rgb(206, 85, 16);
+    }
+
+.card-glaces {
+    position:relative;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 612px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(223, 0, 255, 0.25);
+    border-radius: 25px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    cursor: pointer;
+
+    left:8%;
+    background:transparent;
+    margin-left: 150px;
+    margin-top: 10px;
+    font-size: small;
+
+
+}
+
+.text_back {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    background: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backface-visibility: hidden;
+    border-radius: 0px 0px 25px 25px;
+
+    background:white
+}
+
+ .card-glaces h1 {
+    border-bottom: 1px solid #DF00FF;
+    padding-bottom: 15px;
+    font-size: 1.75vw;
+    font-weight: 400;
+}
+
+.text_back div {
+    width: 85%;
+    margin: auto;
+}
+
+.card-glaces p {
+    font-size: 1vw;
+    font-weight: 400;
+    margin-top: 5%;
+}
+
+.card-glaces span {
+    color: #DB9EDF;
+    margin-top: 25%;
+}
+
+.image_container {
+    width: 100%;
+    height: 50%;
+    border-radius: 25px 25px 0px 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+
+    background:transparent
+}
+
+.card-glaces:hover {
+    transform: translate(-50%, -50%) rotateY(180deg);
+}
+
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 612px;
+    border-radius: 25px;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    backface-visibility: hidden;
+    background:transparent;
+    color: #19191A;
+    transform: rotateY(180deg);
+    border: 1px solid #000000;
+
+    background:white
+
+}
+
+.card-glaces h2 {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+  #map-container {
+    padding-top: 120px;
+    padding-left: 10px;
+  }
+
+  #map {
+    display: block;
+    position: relative;
+    border: 1px solid transparent ;
+    border-radius: 8px;
+    height: 400px;
+    width: 400px;
+  }
+
+  .card {
+      background-color: transparent;
+      color: black ;
+      float: none; /* Added */
+      margin-bottom: 10px; /* Added */
+      margin-top: 200px;
+      border:none
+  }
+
+  .card-boissons {
+
+    position:relative;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 612px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(223, 0, 255, 0.25);
+    border-radius: 25px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    cursor: pointer;
+
+    left:8%;
+    background:transparent;
+    margin-left: 150px;
+    margin-top: 10px;
+    font-size: small;
+
+}
+
+.card-boissons h2 {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);}
+
+
+
+    .card-boissons p {
+        font-size: 1vw;
+        font-weight: 400;
+        margin-top: 5%;
+    }
+
+    .card-boissons span {
+        color: #DB9EDF;
+        margin-top: 25%;
+    }
+
+
+
+.card-body {
+    background: white
+}
+
+  .card-img-top {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+
+  .row{
+      text-align: -webkit-center;
+
+  }
+  .row-map{
+    text-align: -webkit-center;
+    display: block;
+}
+
+
+.form-check {
+   background-color:transparent;
+   padding: 20px 65px;
+
+}
+
+.form-check-input{
+    float: none !important;
+    margin:none !important;
+}
+
+a:link {
+    text-decoration: none;
+  }
+.text-right {
+
+    float: right;
+    margin-right: 95px;
+}
+
+
+
+table{
+    background-color:white
+}
